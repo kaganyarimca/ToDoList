@@ -33,6 +33,11 @@ function App()
     setTodo('')  // yapılacak görevi yazdıktan sonra kutunun boş kalmasını sağlamak için ToDo yu boş setledik.
    }
   
+const deleteTodo= (id) =>
+{
+  setTodoList(prevTodoList=> prevTodoList.filter(todoItem=>todoItem.id !== id)) // silme işlemi için.
+}
+
   return (
     // 'flex column' = satırları alt alta getirir. 
     //w-50 = boyutu ayarlar.
@@ -66,7 +71,7 @@ function App()
                 </label>
               </div>
               <div>
-               <DeleteIcon   width={20} height={20} style={{cursor:'pointer'}} className="me-2"  />        
+               <DeleteIcon   width={20} height={20} style={{cursor:'pointer'}} onClick={ () => deleteTodo(todoItem.id) }  />        
               </div>
           </div>
           )
