@@ -4,6 +4,13 @@
 import { FormControl, Button, Form } from "react-bootstrap"
 import React, { useEffect , useState} from 'react'
 
+//silme işlemi için delete ikonunu ekledik.
+import{ ReactComponent as DeleteIcon } from './assets/DeleteIcon.svg' // React Component eklediğim için yeni
+// bir div açıp sadece DEleteIcon yazmam yeterli.
+
+
+
+
 function App() 
 {
     // değişken için  state oluşturulur. 
@@ -55,20 +62,15 @@ function App()
                   className="me-2"// me-2 : marjin-end 2 (mini button ile yazı arasında boşluk arttırımı.)
                 /> 
                 <label>
-                  { todoItem}
+                  { todoItem} 
                 </label>
               </div>
               <div>
-              Buttonlar
-              
+               <DeleteIcon   width={20} height={20} style={{cursor:'pointer'}} className="me-2"  />        
               </div>
-
-
-                
-            
           </div>
           )
-        }   
+        }           
       </div>
     </div>
   );
@@ -81,3 +83,5 @@ export default App;
  kullanıcın uygulamada yaptığı değişiklikleri yakalayabilmesi için 
  eventListener kullanılır.
 */
+
+//stlye= cursor:'pointer ' --> ikona gelindiğinde pointer görünmesi için yazdım.
